@@ -6,5 +6,8 @@
   ],
   "env": {
     "jest": true
+  },
+  "globals": {
+    "__DEV__": true
   }
 }
