@@ -1,0 +1,8 @@
+rootProject.name = 'Reminder'
+
+include ':app'
+
+// react-native-push-notification START
+include ':react-native-push-notification'
+project(':react-native-push-notification').projectDir = file('../node_modules/react-native-push-notification/android')
+// react-native-push-notification END
