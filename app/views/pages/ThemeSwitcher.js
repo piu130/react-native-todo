@@ -12,17 +12,13 @@ export class ThemeSwitcher extends Component {
     return (
       <ScrollView style={{marginTop: 10}}>
         <FormLabel>Theme</FormLabel>
-        {themes.map(theme => {
-          console.log(theme)
-          console.log(currentTheme)
-          return <RadioButton
-            key={theme}
-            title={theme}
-            onPress={() => changeTheme(theme)}
-            checked={currentTheme.id === theme}
-            disabled={currentTheme.id === theme}
-          />
-        })}
+        {themes.map(theme => <RadioButton
+          key={theme}
+          title={theme}
+          onPress={() => changeTheme(theme)}
+          checked={currentTheme.id === theme}
+          disabled={currentTheme.id === theme}
+        />)}
         {/* <RadioButton */}
         {/* title='custom' */}
         {/* checked={currentThemeName === 'custom'} */}
