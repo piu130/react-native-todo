@@ -1,11 +1,9 @@
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-import promiseMiddleware from 'redux-promise-middleware'
 
 export default () => {
   const middleware = [
-    thunk,
-    promiseMiddleware()
+    thunk
   ]
   if (__DEV__) middleware.push(logger)
   return middleware
