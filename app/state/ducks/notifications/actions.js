@@ -1,27 +1,16 @@
-import { Notifications } from 'expo'
 import { ADD, REMOVE, UPDATE, REMOVE_PAST } from './types'
 
-export const addNotification = (notification) => ({
+export const addNotification = notification => ({
   type: ADD,
-  async payload () {
-    const notificationId = await Notifications.scheduleLocalNotificationAsync({
-      title: notification.title
-    }, {
-      time: notification.time
-    })
-    return {...notification, notificationId}
-  }
+  payload: notification
 })
 
-export const removeNotification = (id) => ({
+export const removeNotification = id => ({
   type: REMOVE,
-  async payload () {
-    await Notifications.cancelScheduledNotificationAsync(id)
-    return id
-  }
+  payload: id
 })
 
-export const updateNotification = (notification) => ({
+export const updateNotification = notification => ({
   type: UPDATE,
   payload: notification
 })

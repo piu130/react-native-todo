@@ -6,7 +6,7 @@ const todoReducer = createReducer(null)({
   [SET]: (state, {payload}) => payload,
   [REMOVE]: (state, action) => null,
   [CHANGE_PROPERTY]: (state, {payload}) => ({ ...state, [payload.property]: payload.value }),
-  [CLEAR_DATETIME]: (state, action) => {
+  [CLEAR_DATETIME]: state => {
     const {date, time, ...rest} = state
     return rest
   }

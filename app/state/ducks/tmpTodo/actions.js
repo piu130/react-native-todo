@@ -6,7 +6,7 @@ export const addNew = () => ({
   payload: { id: cuid() }
 })
 
-export const set = (todo) => ({
+export const set = todo => ({
   type: SET,
   payload: todo
 })
