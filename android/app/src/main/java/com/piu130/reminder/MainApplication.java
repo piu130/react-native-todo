@@ -1,4 +1,4 @@
-package com.reminder;
+package com.piu130.reminder;
 
 import android.app.Application;
 
