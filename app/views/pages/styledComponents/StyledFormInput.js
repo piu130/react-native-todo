@@ -3,20 +3,21 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { FormInput } from 'react-native-elements'
 
-export const StyledFormInput = ({ colors, textStyle, ...rest }) => (
+export const StyledFormInput = ({ colors, inputStyle, ...rest }) => (
   <FormInput
-    textStyle={{
-      color: colors.textColorPrimary,
-      ...textStyle
+    inputStyle={{
+      color: colors.textColorSecondary,
+      ...inputStyle
     }}
-    underlineColorAndroid={colors.colorPrimaryLight}
+    placeholderTextColor={colors.textColorDisabled}
+    underlineColorAndroid={colors.textColorDisabled}
     {...rest}
   />
 )
 
 StyledFormInput.propTypes = {
   colors: PropTypes.object,
-  textStyle: PropTypes.object
+  inputStyle: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({
