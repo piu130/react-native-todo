@@ -11,7 +11,8 @@ export const addNotificationFromTodo = todo => dispatch => {
   const date = time.toDate()
   PushNotification.localNotificationSchedule({
     id,
-    message: todo.name,
+    title: todo.name,
+    message: time.format('llll'),
     date,
     smallIcon: 'ic_stat'
   })
