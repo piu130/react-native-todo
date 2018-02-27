@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router'
 import routes from './app/routes'
 import configureStore from './app/state/configureStore'
 import configure from './configure'
-import { StyledLoadingPage as LoadingPage } from './app/views/pages'
+import { StyledLoadingPage as LoadingPage, StyledStatusBar as StatusBar } from './app/views/pages'
 
 configure()
 
@@ -24,6 +24,7 @@ export class App extends Component {
     return (
       <Provider store={store}>
         <PersistGate loading={<LoadingPage />} persistor={persistor}>
+          <StatusBar />
           <ConnectedRouter history={history}>
             <Switch>
               {routes.map((route) => (
