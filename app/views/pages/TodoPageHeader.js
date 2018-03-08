@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BackHandler } from 'react-native'
 import { connect } from 'react-redux'
-import { routerOperations } from '../../state/ducks/router'
+import { routerOperations } from '../../state/ducks/ui/router'
 import { StyledHeader as Header } from '.'
 import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
 

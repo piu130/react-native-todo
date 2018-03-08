@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { StyledHeader as Header } from '.'
-import { routerOperations } from '../../state/ducks/router'
+import { routerOperations } from '../../state/ducks/ui/router'
 
 export class TodoListPageHeader extends Component {
   render () {

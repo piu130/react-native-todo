@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon } from 'react-native-elements'
 import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
-import { routerOperations } from '../../state/ducks/router'
+import { routerOperations } from '../../state/ducks/ui/router'
 
 export class AddTodoButton extends Component {
   render () {

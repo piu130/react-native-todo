@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import moment from 'moment'
 import SwipeOut from 'react-native-swipeout'
 import { todosOperations } from '../../state/ducks/todos'
-import { routerOperations } from '../../state/ducks/router'
+import { routerOperations } from '../../state/ducks/ui/router'
 import { StyledListItem as ListItem } from '.'
 
 export class TodoListItem extends Component {
