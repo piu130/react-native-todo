@@ -1,6 +1,6 @@
 import { CHANGE_COLORS, CHANGE_THEME } from './types'
 import { dark } from './themes'
-import { createReducer } from '../../utils'
+import { createReducer } from '../../../utils'
 
 export default createReducer(dark)({
   [CHANGE_COLORS]: (state, {payload}) => ({ ...state, ...payload, id: 'custom' }),

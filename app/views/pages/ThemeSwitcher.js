@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { ScrollView } from 'react-native'
-import { colorsOperations } from '../../state/ducks/colors'
+import { colorsOperations } from '../../state/ducks/entities/colors'
 import { StyledRadioButton as RadioButton, StyledFormLabel as FormLabel } from '.'
 
 export class ThemeSwitcher extends Component {
@@ -35,7 +35,7 @@ ThemeSwitcher.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  currentTheme: state.colors
+  currentTheme: state.entities.colors
 })
 
 const mapDispatchToProps = {

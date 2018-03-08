@@ -44,7 +44,7 @@ StyledHeader.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  colors: state.colors
+  colors: state.entities.colors
 })
 
 const mapDispatchToProps = {}
