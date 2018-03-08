@@ -1,5 +1,5 @@
 import * as actions from './actions'
-import { todosOperations } from '../todos'
+import { todosOperations } from '../../todos'
 
 export const addNew = actions.addNew
 
@@ -14,7 +14,7 @@ export const changeTime = actions.changeTime
 export const clearDateTime = actions.clearDateTime
 
 export const save = () => (dispatch, getState) => {
-  dispatch(todosOperations.putTodo(getState().tmpTodo))
+  dispatch(todosOperations.putTodo(getState().ui.tmpTodo))
   dispatch(actions.remove())
 }
 

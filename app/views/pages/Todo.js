@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import { FormLabel } from 'react-native-elements'
 import moment from 'moment'
 import { openDatePicker, openTimePicker } from '../enhancers'
-import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
+import { tmpTodoOperations } from '../../state/ducks/ui/tmpTodo'
 import { StyledButton as Button, DateText, StyledFormInput as FormInput } from '.'
 
 export class Todo extends Component {
@@ -75,7 +75,7 @@ Todo.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  todo: state.tmpTodo
+  todo: state.ui.tmpTodo
 })
 
 const mapDispatchToProps = {

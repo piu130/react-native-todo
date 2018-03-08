@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
+import { tmpTodoOperations } from '../../state/ducks/ui/tmpTodo'
 import { StyledMainView as View, Todo, TodoPageHeader } from '.'
 
 export class TodoPage extends Component {

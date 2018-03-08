@@ -1,5 +1,5 @@
 import { NEW, SET, REMOVE, CHANGE_PROPERTY, CLEAR_DATETIME } from './types'
-import { createReducer } from '../../utils'
+import { createReducer } from '../../../utils'
 
 const todoReducer = createReducer(null)({
   [NEW]: (state, {payload}) => payload,

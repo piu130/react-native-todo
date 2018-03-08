@@ -4,7 +4,7 @@ import { BackHandler } from 'react-native'
 import { connect } from 'react-redux'
 import { routerOperations } from '../../state/ducks/ui/router'
 import { StyledHeader as Header } from '.'
-import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
+import { tmpTodoOperations } from '../../state/ducks/ui/tmpTodo'
 
 export class TodoPageHeader extends Component {
   componentDidMount () {
@@ -53,7 +53,7 @@ TodoPageHeader.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  todo: state.tmpTodo
+  todo: state.ui.tmpTodo
 })
 
 const mapDispatchToProps = {

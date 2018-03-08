@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon } from 'react-native-elements'
-import { tmpTodoOperations } from '../../state/ducks/tmpTodo'
+import { tmpTodoOperations } from '../../state/ducks/ui/tmpTodo'
 import { routerOperations } from '../../state/ducks/ui/router'
 
 export class AddTodoButton extends Component {
