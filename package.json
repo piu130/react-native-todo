@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "test": "jest",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "fix": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "cuid": "^2.1.0",
