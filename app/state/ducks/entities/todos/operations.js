@@ -1,4 +1,4 @@
-import { notificationsOperations } from '../../notifications'
+import { notificationsOperations } from '../notifications'
 import * as actions from './actions'
 
 export const putTodo = todo => dispatch => {

@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { ADD, UPDATE, REMOVE, REMOVE_PAST } from './types'
-import { createReducer } from '../../utils'
+import { createReducer } from '../../../utils'
 
 const colorsReducer = createReducer([])({
   [ADD]: (state, action) => [...state, action.payload],

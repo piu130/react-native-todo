@@ -27,7 +27,7 @@ export const addNotificationFromTodo = todo => dispatch => {
 }
 
 export const removeNotificationFromTodo = todo => (dispatch, getState) => {
-  const notification = getState().notifications.find(notification => notification.todoId === todo.id)
+  const notification = getState().entities.notifications.find(notification => notification.todoId === todo.id)
   if (notification) {
     const id = notification.id
     PushNotification.cancelLocalNotifications({id})
