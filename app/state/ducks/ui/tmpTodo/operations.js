@@ -1,5 +1,5 @@
 import * as actions from './actions'
-import { todosOperations } from '../../todos'
+import { todosOperations } from '../../entities/todos'
 
 export const addNew = actions.addNew
 
@@ -19,7 +19,7 @@ export const save = () => (dispatch, getState) => {
 }
 
 export const load = id => (dispatch, getState) => {
-  const todo = getState().todos.find(todo => todo.id === id)
+  const todo = getState().entities.todos.find(todo => todo.id === id)
   if (todo) dispatch(actions.set(todo))
   else dispatch(actions.addNew())
 }

@@ -22,7 +22,7 @@ TodoList.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  todos: state.todos
+  todos: state.entities.todos
 })
 
 const mapDispatchToProps = {}

@@ -1,4 +1,4 @@
-import { notificationsOperations } from '../notifications'
+import { notificationsOperations } from '../../notifications'
 import * as actions from './actions'
 
 export const putTodo = todo => dispatch => {
@@ -7,7 +7,7 @@ export const putTodo = todo => dispatch => {
 }
 
 export const deleteTodo = id => (dispatch, getState) => {
-  const todo = getState().todos.find(todo => todo.id === id)
+  const todo = getState().entities.todos.find(todo => todo.id === id)
   if (todo) dispatch(notificationsOperations.removeNotificationFromTodo(todo))
   dispatch(actions.remove(id))
 }
