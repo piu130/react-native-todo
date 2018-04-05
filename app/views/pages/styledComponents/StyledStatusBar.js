@@ -7,7 +7,6 @@ export const StyledStatusBar = ({ colors, ...rest }) => (
   <StatusBar
     barStyle={colors.navigationBarStyle}
     backgroundColor={colors.navigationBarColor}
-    translucent
     {...rest}
   />
 )

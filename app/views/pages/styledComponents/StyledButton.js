@@ -1,12 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Button } from 'react-native-elements'
+import { Button, Icon } from 'react-native-elements'
 
-export const StyledButton = ({ colors, disabledStyle, ...rest }) => (
+export const StyledButton = ({ colors, icon, buttonStyle, disabledStyle, ...rest }) => (
   <Button
     color={colors.textColorPrimary}
-    backgroundColor={colors.colorPrimary}
+    icon={
+      <Icon
+        color={colors.textColorPrimary}
+        {...icon}
+      />
+    }
+    buttonStyle={{
+      backgroundColor: colors.colorPrimary,
+      ...buttonStyle
+    }}
     disabledStyle={{
       backgroundColor: colors.colorPrimaryLight,
       ...disabledStyle
@@ -17,6 +26,7 @@ export const StyledButton = ({ colors, disabledStyle, ...rest }) => (
 
 StyledButton.propTypes = {
   colors: PropTypes.object,
+  buttonStyle: PropTypes.object,
   disabledStyle: PropTypes.object
 }
 

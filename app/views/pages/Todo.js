@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { View } from 'react-native'
-import { FormLabel } from 'react-native-elements'
 import moment from 'moment'
 import { openDatePicker, openTimePicker } from '../enhancers'
 import { tmpTodoOperations } from '../../state/ducks/ui/tmpTodo'
@@ -38,9 +37,9 @@ export class Todo extends Component {
           {...todo ? {defaultValue: todo.name} : {}}
           onChangeText={changeName}
         />
-        {date && <FormLabel><DateText date={date} /></FormLabel>}
+        {date && <DateText style={{fontWeight: 'bold', margin: 8}} date={date} />}
         <Button
-          containerViewStyle={{marginBottom: 1, marginTop: 7}}
+          containerStyle={{margin: 1, marginTop: 7}}
           icon={{name: 'date-range'}}
           title='set date'
           onPress={async () => {
@@ -49,13 +48,14 @@ export class Todo extends Component {
           }}
         />
         <Button
-          containerViewStyle={{marginBottom: 1}}
+          containerStyle={{margin: 1}}
           icon={{name: 'access-time'}}
           title='set time'
           onPress={() => this.handleTimePicker(todo.time)}
           {...todo.date ? {} : { disabled: true }}
         />
         <Button
+          containerStyle={{margin: 1}}
           icon={{name: 'clear'}}
           title='clear'
           onPress={clearDateTime}

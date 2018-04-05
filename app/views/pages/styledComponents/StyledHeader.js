@@ -13,7 +13,6 @@ export const StyledHeader = ({ colors, outerContainerStyles, statusBarProps, lef
     statusBarProps={{
       backgroundColor: colors.navigationBarColor,
       barStyle: colors.navigationBarStyle,
-      translucent: true,
       ...statusBarProps
     }}
     leftComponent={{

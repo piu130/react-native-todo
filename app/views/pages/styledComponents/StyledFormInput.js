@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { FormInput } from 'react-native-elements'
+import { Input } from 'react-native-elements'
 
 export const StyledFormInput = ({ colors, inputStyle, ...rest }) => (
-  <FormInput
+  <Input
     inputStyle={{
       color: colors.textColorSecondary,
       ...inputStyle

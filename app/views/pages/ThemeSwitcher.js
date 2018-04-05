@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { ScrollView } from 'react-native'
 import { colorsOperations } from '../../state/ducks/entities/colors'
-import { StyledRadioButton as RadioButton, StyledFormLabel as FormLabel } from '.'
+import { StyledRadioButton as RadioButton } from '.'
 
 export class ThemeSwitcher extends Component {
   render () {
@@ -11,7 +11,7 @@ export class ThemeSwitcher extends Component {
     const themes = ['light', 'dark', 'pink']
     return (
       <ScrollView style={{marginTop: 10}}>
-        <FormLabel>Theme</FormLabel>
+        {/*<FormLabel>Theme</FormLabel>*/}
         {themes.map(theme => <RadioButton
           key={theme}
           title={theme}
