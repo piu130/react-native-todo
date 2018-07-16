@@ -17,7 +17,7 @@
     "react": "^16.4.1",
     "react-native": "^0.56.0",
     "react-native-elements": "~1.0.0-beta5",
-    "react-native-push-notification": "^3.0.2",
+    "react-native-local-notification-android": "git://github.com/piu130/react-native-local-notification-android.git",
     "react-native-swipeout": "^2.3.3",
     "react-native-vector-icons": "^4.6.0",
     "react-redux": "^5.0.7",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "babel-jest": "22.4.1",
-    "babel-preset-react-native": "~5.0.1",
+    "babel-preset-react-native": "^5.0.2",
     "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",

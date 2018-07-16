@@ -1,4 +1,4 @@
-import PushNotification from 'react-native-push-notification'
+import {scheduleLocalNotification, cancelLocalNotifications} from 'react-native-local-notification-android'
 import * as actions from './actions'
 import moment from 'moment'
 
@@ -8,13 +8,14 @@ export const addNotificationFromTodo = todo => dispatch => {
   if (time.isBefore(moment())) return
 
   const id = createPushId()
-  const date = time.toDate()
-  PushNotification.localNotificationSchedule({
+  const date = time.valueOf()
+  scheduleLocalNotification({
     id,
-    title: todo.name,
-    message: time.format('llll'),
-    date,
-    smallIcon: 'ic_stat'
+    alertTitle: todo.name,
+    alertBody: time.format('llll'),
+    fireDate: date,
+    smallIcon: 'ic_stat',
+    channelId: 'default'
   })
   dispatch(actions.addNotification({
     todoId: todo.id,
@@ -30,7 +31,7 @@ export const removeNotificationFromTodo = todo => (dispatch, getState) => {
   const notification = getState().entities.notifications.find(notification => notification.todoId === todo.id)
   if (notification) {
     const id = notification.id
-    PushNotification.cancelLocalNotifications({id})
+    cancelLocalNotifications({id})
     dispatch(actions.removeNotification(id))
   }
 }
@@ -43,4 +44,4 @@ export const updateNotificationFromTodo = todo => dispatch => {
 // todo temporary https://github.com/react-community/create-react-native-app/issues/481
 export const removePast = actions.removePast
 
-export const createPushId = () => Math.floor(Math.random() * 2 ** 31).toString()
+export const createPushId = () => Math.floor(Math.random() * 2 ** 31)

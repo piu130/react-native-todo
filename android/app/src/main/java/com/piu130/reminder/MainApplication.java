@@ -3,6 +3,7 @@ package com.piu130.reminder;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.piu130.reactnativelocalnotification.RNLocalNotificationPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -11,10 +12,6 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
-
-// react-native-push-notification START
-import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
-// react-native-push-notification END
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -28,10 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNLocalNotificationPackage(),
             new VectorIconsPackage()
-          // react-native-push-notification START
-          , new ReactNativePushNotificationPackage()
-          // react-native-push-notification END
       );
     }
 
