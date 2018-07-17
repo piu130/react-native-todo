@@ -19,7 +19,7 @@ export const addNotificationFromTodo = todo => dispatch => {
   })
   dispatch(actions.addNotification({
     todoId: todo.id,
-    id: id,
+    id,
     date
   }))
 
