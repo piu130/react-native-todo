@@ -30,6 +30,11 @@
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
         <receiver android:name="com.piu130.reactnativelocalnotification.NotificationPublisher" />
+        <receiver android:name="com.piu130.reactnativelocalnotification.BootEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
