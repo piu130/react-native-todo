@@ -7,8 +7,8 @@ export default {
   textColorPrimary: '#ffffff',
   textColorSecondary: '#000000',
   textColorDisabled: '#808080',
-  textColorPastEvent: '#303f9f',
-  textColorTodayEvent: '#fb3d38',
+  textColorTodayEvent: '#303f9f',
+  textColorPastEvent: '#fb3d38',
 
   windowBackground: '#ffffff',
   navigationBarColor: '#bd5800',
