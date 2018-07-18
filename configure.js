@@ -19,4 +19,7 @@ export default () => {
     importance: 3,
     descrition: 'default channel'
   })
+
+  // i18n
+  
 }
