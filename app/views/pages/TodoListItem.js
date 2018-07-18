@@ -28,7 +28,7 @@ export class TodoListItem extends Component {
           title={todo.name}
           {...date ? {subtitle: date.format('llll')} : {}}
           {...date && {subtitleStyle: {color}}}
-          onLongPress={() => navigate('/todo/' + todo.id)}
+          onPress={() => navigate('/todo/' + todo.id)}
         />
       </SwipeOut>
     )
