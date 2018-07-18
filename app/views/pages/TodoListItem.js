@@ -6,11 +6,13 @@ import SwipeOut from 'react-native-swipeout'
 import { todosOperations } from '../../state/ducks/entities/todos'
 import { routerOperations } from '../../state/ducks/ui/router'
 import { StyledListItem as ListItem } from '.'
+import { getColor } from '../enhancers'
 
 export class TodoListItem extends Component {
   render () {
     const { colors, todo, removeTodo, navigate } = this.props
     const date = todo.date ? moment({...todo.date, ...todo.time}) : undefined
+    const color = getColor(date, colors)
     return (
       <SwipeOut
         backgroundColor='transparent'
@@ -24,13 +26,8 @@ export class TodoListItem extends Component {
       >
         <ListItem
           title={todo.name}
-          {...date ? { subtitle: date.format('llll') } : {}}
-          {...date && date.isSame(moment(), 'day')
-            ? { subtitleStyle: {color: colors.textColorTodayEvent} }
-            : {...date && date.isBefore(moment(), 'day')
-              ? { subtitleStyle: {color: colors.textColorPastEvent} }
-              : { subtitleStyle: {color: colors.textColorDisabled} }}
-          }
+          {...date ? {subtitle: date.format('llll')} : {}}
+          {...date && {subtitleStyle: {color}}}
           onLongPress={() => navigate('/todo/' + todo.id)}
         />
       </SwipeOut>
