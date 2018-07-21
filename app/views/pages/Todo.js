@@ -34,7 +34,7 @@ export class Todo extends Component {
           }}
           returnKeyType='next'
           placeholder='Title'
-          {...todo ? {defaultValue: todo.name} : {}}
+          {...todo && {defaultValue: todo.name}}
           onChangeText={changeName}
         />
         {date && <DateText style={{fontWeight: 'bold', margin: 8}} date={date} />}
