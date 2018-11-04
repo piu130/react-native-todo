@@ -4,10 +4,10 @@ import { Provider } from 'react-redux'
 import { createMemoryHistory } from 'history'
 import { routerMiddleware, ConnectedRouter } from 'react-router-redux'
 import { Route, Switch } from 'react-router'
-import routes from './app/routes'
-import configureStore from './app/state/configureStore'
-import configure from './configure'
-import { StyledLoadingPage as LoadingPage, StyledStatusBar as StatusBar } from './app/views/pages'
+import routes from './routes'
+import configureStore from './state/configureStore'
+import configure from './config/configure'
+import { StyledLoadingPage as LoadingPage, StyledStatusBar as StatusBar } from './views/pages'
 
 configure()
 

@@ -5,6 +5,6 @@ export default () => {
   const middleware = [
     thunk
   ]
-  if (__DEV__) middleware.push(logger)
+  if (process.env.NODE_ENV === 'development') middleware.push(logger)
   return middleware
 }
