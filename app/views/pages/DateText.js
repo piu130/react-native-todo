@@ -10,7 +10,7 @@ export class DateText extends Component {
     const color = getColor(date, colors)
     return (
       <Text
-        {...color && {style: {...style, color}}}
+        {...color && { style: { ...style, color } }}
         {...rest}
       >
         {date.format('llll')}

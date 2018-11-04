@@ -22,26 +22,26 @@ export class Todo extends Component {
 
   render () {
     const { todo, changeName, clearDateTime } = this.props
-    const date = todo.date ? moment({...todo.date, ...todo.time}) : undefined
+    const date = todo.date ? moment({ ...todo.date, ...todo.time }) : undefined
     return (
       <View>
         <FormInput
           autoFocus
           autoGrow
-          containerStyle={{width: '100%'}}
+          containerStyle={{ width: '100%' }}
           onSubmitEditing={async () => {
             const date = await this.handleDatePicker(todo.date)
             if (date) this.handleTimePicker(todo.time)
           }}
           returnKeyType='next'
           placeholder='Title'
-          {...todo && {defaultValue: todo.name}}
+          {...todo && { defaultValue: todo.name }}
           onChangeText={changeName}
         />
-        {date && <DateText style={{fontWeight: 'bold', margin: 8}} date={date} />}
+        {date && <DateText style={{ fontWeight: 'bold', margin: 8 }} date={date} />}
         <Button
-          containerStyle={{margin: 1, marginTop: 7}}
-          icon={{name: 'date-range'}}
+          containerStyle={{ margin: 1, marginTop: 7 }}
+          icon={{ name: 'date-range' }}
           title='set date'
           onPress={async () => {
             const date = await this.handleDatePicker(todo.date)
@@ -49,15 +49,15 @@ export class Todo extends Component {
           }}
         />
         <Button
-          containerStyle={{margin: 1}}
-          icon={{name: 'access-time'}}
+          containerStyle={{ margin: 1 }}
+          icon={{ name: 'access-time' }}
           title='set time'
           onPress={() => this.handleTimePicker(todo.time)}
           {...todo.date ? {} : { disabled: true }}
         />
         <Button
-          containerStyle={{margin: 1}}
-          icon={{name: 'clear'}}
+          containerStyle={{ margin: 1 }}
+          icon={{ name: 'clear' }}
           title='clear'
           onPress={clearDateTime}
           {...todo.date || todo.time ? {} : { disabled: true }}

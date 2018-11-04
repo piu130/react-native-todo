@@ -10,8 +10,8 @@ export class ThemeSwitcher extends Component {
     const { changeTheme, currentTheme } = this.props
     const themes = ['light', 'dark', 'pink']
     return (
-      <ScrollView style={{marginTop: 10}}>
-        {/*<FormLabel>Theme</FormLabel>*/}
+      <ScrollView style={{ marginTop: 10 }}>
+        {/* <FormLabel>Theme</FormLabel> */}
         {themes.map(theme => <RadioButton
           key={theme}
           title={theme}

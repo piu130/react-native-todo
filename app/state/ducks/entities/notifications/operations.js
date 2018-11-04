@@ -1,10 +1,10 @@
-import {scheduleLocalNotification, cancelLocalNotifications} from 'react-native-local-notification-android'
+import { scheduleLocalNotification, cancelLocalNotifications } from 'react-native-local-notification-android'
 import * as actions from './actions'
 import moment from 'moment'
 
 export const addNotificationFromTodo = todo => dispatch => {
   if (!todo.date) return
-  const time = moment({...todo.date, ...todo.time})
+  const time = moment({ ...todo.date, ...todo.time })
   if (time.isBefore(moment())) return
 
   const id = createPushId()
@@ -31,7 +31,7 @@ export const removeNotificationFromTodo = todo => (dispatch, getState) => {
   const notification = getState().entities.notifications.find(notification => notification.todoId === todo.id)
   if (notification) {
     const id = notification.id
-    cancelLocalNotifications({id})
+    cancelLocalNotifications({ id })
     dispatch(actions.removeNotification(id))
   }
 }

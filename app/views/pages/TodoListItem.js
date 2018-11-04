@@ -11,7 +11,7 @@ import { getColor } from '../enhancers'
 export class TodoListItem extends Component {
   render () {
     const { colors, todo, removeTodo, navigate } = this.props
-    const date = todo.date ? moment({...todo.date, ...todo.time}) : undefined
+    const date = todo.date ? moment({ ...todo.date, ...todo.time }) : undefined
     const color = getColor(date, colors)
     return (
       <SwipeOut
@@ -26,8 +26,8 @@ export class TodoListItem extends Component {
       >
         <ListItem
           title={todo.name}
-          {...date ? {subtitle: date.format('llll')} : {}}
-          {...date && {subtitleStyle: {color}}}
+          {...date ? { subtitle: date.format('llll') } : {}}
+          {...date && { subtitleStyle: { color } }}
           onPress={() => navigate('/todo/' + todo.id)}
         />
       </SwipeOut>

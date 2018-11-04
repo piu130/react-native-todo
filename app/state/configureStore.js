@@ -15,7 +15,7 @@ export default (initialState, customReducers, customMiddleware) => {
         blacklist: ['ui'],
         migrate: createMigrate(migrations, { debug: false })
       },
-      combineReducers({...reducers, ...customReducers})
+      combineReducers({ ...reducers, ...customReducers })
     ),
     initialState,
     compose(applyMiddleware(...createMiddleware(), ...customMiddleware))

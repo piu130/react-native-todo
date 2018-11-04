@@ -2,7 +2,7 @@ export default {
   1: (state) => state,
   // Rename barStyle -> navigationBarStyle
   2: (state) => {
-    const {barStyle, ...colors} = state.colors
+    const { barStyle, ...colors } = state.colors
     colors.navigationBarStyle = barStyle
     return {
       ...state,

@@ -18,7 +18,7 @@ export class AddTodoButton extends Component {
           newTodo()
           navigate('/todo')
         }}
-        containerStyle={{position: 'absolute', bottom: 10, right: 10}}
+        containerStyle={{ position: 'absolute', bottom: 10, right: 10 }}
       />
     )
   }

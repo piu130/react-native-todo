@@ -9,25 +9,25 @@ describe('tmpTodo reducer', () => {
   test('should handle NEW', () => {
     expect(reducer(null, {
       type: types.NEW,
-      payload: {id: 'abc123'}
-    })).toEqual({id: 'abc123'})
+      payload: { id: 'abc123' }
+    })).toEqual({ id: 'abc123' })
 
-    expect(reducer({id: 'de23', name: 'first'}, {
+    expect(reducer({ id: 'de23', name: 'first' }, {
       type: types.NEW,
-      payload: {id: 'abc123', name: 'test name'}
-    })).toEqual({id: 'abc123', name: 'test name'})
+      payload: { id: 'abc123', name: 'test name' }
+    })).toEqual({ id: 'abc123', name: 'test name' })
   })
 
   test('should handle SET', () => {
     expect(reducer(null, {
       type: types.SET,
-      payload: {id: 'abc123'}
-    })).toEqual({id: 'abc123'})
+      payload: { id: 'abc123' }
+    })).toEqual({ id: 'abc123' })
 
-    expect(reducer({id: 'de23', name: 'first'}, {
+    expect(reducer({ id: 'de23', name: 'first' }, {
       type: types.SET,
-      payload: {id: 'abc123', name: 'test name'}
-    })).toEqual({id: 'abc123', name: 'test name'})
+      payload: { id: 'abc123', name: 'test name' }
+    })).toEqual({ id: 'abc123', name: 'test name' })
   })
 
   test('should handle REMOVE', () => {
@@ -35,7 +35,7 @@ describe('tmpTodo reducer', () => {
       type: types.REMOVE
     })).toEqual(null)
 
-    expect(reducer({id: 'de23', name: 'first'}, {
+    expect(reducer({ id: 'de23', name: 'first' }, {
       type: types.REMOVE
     })).toEqual(null)
   })
@@ -47,14 +47,14 @@ describe('tmpTodo reducer', () => {
         property: 'name',
         value: 'newName'
       }
-    })).toEqual({name: 'newName'})
+    })).toEqual({ name: 'newName' })
 
-    expect(reducer({id: 'de23', name: 'first'}, {
+    expect(reducer({ id: 'de23', name: 'first' }, {
       type: types.CHANGE_PROPERTY,
       payload: {
         property: 'name',
         value: 'newName'
       }
-    })).toEqual({id: 'de23', name: 'newName'})
+    })).toEqual({ id: 'de23', name: 'newName' })
   })
 })

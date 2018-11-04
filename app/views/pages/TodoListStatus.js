@@ -10,7 +10,7 @@ export class TodoListStatus extends Component {
     const { todos } = this.props
     const total = todos.length
     const totalToday = todos.reduce(
-      (acc, todo) => acc + (todo.date && moment({...todo.date, ...todo.time}).isSame(moment(), 'day') ? 1 : 0),
+      (acc, todo) => acc + (todo.date && moment({ ...todo.date, ...todo.time }).isSame(moment(), 'day') ? 1 : 0),
       0
     )
     return (
@@ -21,13 +21,13 @@ export class TodoListStatus extends Component {
         flex: 0,
         backgroundColor: 'transparent'
       }}>
-        <View style={{flexDirection: 'row'}}>
-          <Text textColor='textColorDisabled' style={{width: '15%', fontWeight: 'bold'}}>Today</Text>
-          <Text textColor='textColorDisabled' style={{width: '10%', textAlign: 'right', fontWeight: 'bold'}}>{totalToday}</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <Text textColor='textColorDisabled' style={{ width: '15%', fontWeight: 'bold' }}>Today</Text>
+          <Text textColor='textColorDisabled' style={{ width: '10%', textAlign: 'right', fontWeight: 'bold' }}>{totalToday}</Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          <Text textColor='textColorDisabled' style={{width: '15%', fontWeight: 'bold'}}>Total</Text>
-          <Text textColor='textColorDisabled' style={{width: '10%', textAlign: 'right', fontWeight: 'bold'}}>{total}</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <Text textColor='textColorDisabled' style={{ width: '15%', fontWeight: 'bold' }}>Total</Text>
+          <Text textColor='textColorDisabled' style={{ width: '10%', textAlign: 'right', fontWeight: 'bold' }}>{total}</Text>
         </View>
       </View>
     )

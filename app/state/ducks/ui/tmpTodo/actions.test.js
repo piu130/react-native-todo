@@ -15,8 +15,8 @@ test('actions should create an action to set a tmpTodo', () => {
   const tmpTodo = {
     id: 1,
     name: 'test name',
-    date: {year: 2017, month: 8, day: 5},
-    time: {hour: 1, minute: 40}
+    date: { year: 2017, month: 8, day: 5 },
+    time: { hour: 1, minute: 40 }
   }
   const expectedAction = {
     type: types.SET,
