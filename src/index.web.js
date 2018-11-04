@@ -3,6 +3,7 @@ import { AppContainer } from 'react-hot-loader'
 import App from './App'
 
 const root = document.getElementById('root')
+root.style.height = '100vh'
 const load = () => render((
   <AppContainer>
     <App />

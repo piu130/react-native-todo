@@ -6,6 +6,7 @@ import { View } from 'react-native'
 export const StyledMainView = ({ colors, style, children, ...rest }) => (
   <View
     style={{
+      height: '100%',
       flex: 1,
       backgroundColor: colors.windowBackground,
       ...style

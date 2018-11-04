@@ -18,7 +18,6 @@ export class TodoListStatus extends Component {
         paddingLeft: 20,
         paddingBottom: 20,
         paddingTop: 11,
-        flex: 0,
         backgroundColor: 'transparent'
       }}>
         <View style={{ flexDirection: 'row' }}>
