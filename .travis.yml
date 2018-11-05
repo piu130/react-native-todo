@@ -1,13 +1,10 @@
 sudo: false
 language: node_js
 node_js:
-  - "7"
+  - "10"
 
-cache:
-  npm: true
-  directories:
-    - node_modules
+cache: yarn
 
 script:
-  - npm run lint
-  - npm run test
+  - yarn lint
+  - yarn test
