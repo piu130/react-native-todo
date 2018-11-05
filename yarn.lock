@@ -9750,7 +9750,7 @@ react-native-elements@1.0.0-beta5:
 
 "react-native-local-notification-android@git://github.com/piu130/react-native-local-notification-android.git":
   version "0.0.1"
-  resolved "git://github.com/piu130/react-native-local-notification-android.git#e059d8ecd20fa327e2832a58f7fe5d9c046ba20e"
+  resolved "git://github.com/piu130/react-native-local-notification-android.git#34671d91b93e6b25c9df8b2558e8ecdf84e3e71d"
 
 react-native-swipeout@^2.3.3:
   version "2.3.6"
