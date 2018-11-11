@@ -4,6 +4,7 @@ const nodeModulesDir = join(process.cwd(), 'node_modules')
 
 module.exports = {
   use: [
+    '@neutrinojs/standardjs',
     [
       '@neutrinojs/react',
       {
@@ -12,6 +13,7 @@ module.exports = {
         }
       }
     ],
+    '@neutrinojs/jest',
     (neutrino) => {
       neutrino.config.resolve.extensions.prepend('.web.jsx').prepend('.web.js')
       neutrino.config.module

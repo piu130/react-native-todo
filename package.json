@@ -7,7 +7,8 @@
     "android": "react-native run-android",
     "web": "neutrino start --use web/.neutrinorc.js",
     "test": "jest",
-    "lint": "eslint src/**/*.js",
+    "lint": "neutrino lint --use web/.neutrinorc.js",
+    "lint:fix": "neutrino lint --fix --use web/.neutrinorc.js",
     "fix": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
@@ -34,23 +35,11 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@neutrinojs/jest": "^8.3.0",
     "@neutrinojs/react": "^8.3.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "22.4.1",
+    "@neutrinojs/standardjs": "^8.3.0",
     "babel-preset-react-native": "^4.0.1",
-    "eslint": "^5.8.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "jest": "22.4.2",
     "neutrino": "^8.3.0",
     "react-test-renderer": "16.2.0"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
