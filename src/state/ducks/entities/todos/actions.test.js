@@ -29,7 +29,7 @@ test('actions should create an action to update a todo', () => {
   expect(actions.update(todo)).toEqual(expectedAction)
 })
 
-test('actions should create an action to update a todo', () => {
+test('actions should create an action to remove a todo', () => {
   const id = 'abc123'
   const expectedAction = {
     type: types.REMOVE,

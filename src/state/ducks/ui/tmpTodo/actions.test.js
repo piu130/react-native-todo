@@ -5,10 +5,11 @@ test('actions should create an action to add a new tmpTodo', () => {
   // todo better way to test random id?
   const actionObject = actions.addNew()
   expect(
-    Object.keys(actionObject) === ['type', 'payload'] &&
+    'type' in actionObject &&
+    'payload' in actionObject &&
     actionObject.type === types.NEW &&
     typeof actionObject.payload.id === 'string'
-  )
+  ).toEqual(true)
 })
 
 test('actions should create an action to set a tmpTodo', () => {
