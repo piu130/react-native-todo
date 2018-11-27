@@ -3,18 +3,24 @@ import { I18nManager } from 'react-native'
 
 import 'moment/locale/de'
 
-const setupVectorIconFont = () => {
+const getFontTag = (fontName) => {
   const style = document.createElement('style')
 
-  const materialIconsFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf')
-  const materialIconsFontStyles = `@font-face {
-    src: url(${materialIconsFont});
-    font-family: 'MaterialIcons';
+  const fontUrl = require(`react-native-vector-icons/Fonts/${fontName}.ttf`)
+  const fontStyles = `@font-face {
+    src: url(${fontUrl});
+    font-family: '${fontName}';
   }`
   style.type = 'text/css'
-  style.appendChild(document.createTextNode(materialIconsFontStyles))
+  style.appendChild(document.createTextNode(fontStyles))
 
-  document.head.appendChild(style)
+  return style
+}
+
+const setupVectorIconFont = () => {
+  const mTag = getFontTag('MaterialIcons')
+
+  document.head.appendChild(mTag)
 }
 
 const setupLocale = () => {
