@@ -17,10 +17,11 @@ const getFontTag = (fontName) => {
   return style
 }
 
-const setupVectorIconFont = () => {
-  const mTag = getFontTag('MaterialIcons')
-
-  document.head.appendChild(mTag)
+const setupVectorIconFonts = () => {
+  const fonts = [
+    'MaterialIcons'
+  ]
+  fonts.forEach(font => document.head.appendChild(getFontTag(font)))
 }
 
 const setupLocale = () => {
@@ -28,7 +29,7 @@ const setupLocale = () => {
 }
 
 export const configure = () => {
-  setupVectorIconFont()
+  setupVectorIconFonts()
   setupLocale()
 }
 
