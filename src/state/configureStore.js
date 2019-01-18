@@ -11,7 +11,7 @@ export default (initialState, customReducers, customMiddleware) => {
       {
         key: 'root',
         storage,
-        version: 3,
+        version: 4,
         blacklist: ['ui'],
         migrate: createMigrate(migrations, { debug: false })
       },

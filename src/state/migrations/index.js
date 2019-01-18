@@ -29,5 +29,21 @@ export default {
       ...state,
       colors
     }
+  },
+  4: (state) => {
+    const oldTodos = state.entities.todos
+    return {
+      ...state,
+      entities: {
+        ...state.entities,
+        todos: {
+          byId: oldTodos.reduce((acc, curr) => ({
+            ...acc,
+            [curr.id]: curr
+          }), {}),
+          allIds: oldTodos.map(todo => todo.id)
+        }
+      }
+    }
   }
 }
