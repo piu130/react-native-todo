@@ -19,7 +19,7 @@ export const save = () => (dispatch, getState) => {
 }
 
 export const load = id => (dispatch, getState) => {
-  const todo = getState().entities.todos.find(todo => todo.id === id)
+  const todo = getState().entities.todos.byId[id]
   if (todo) dispatch(actions.set(todo))
   else dispatch(actions.addNew())
 }

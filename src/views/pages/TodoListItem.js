@@ -42,8 +42,9 @@ TodoListItem.propTypes = {
   navigate: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-  colors: state.entities.colors
+const mapStateToProps = (state, ownProps) => ({
+  colors: state.entities.colors,
+  todo: state.entities.todos.byId[ownProps.todo.id]
 })
 
 const mapDispatchToProps = {

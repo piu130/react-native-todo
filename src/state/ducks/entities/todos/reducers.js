@@ -1,11 +1,20 @@
 import { ADD, UPDATE, REMOVE } from './types'
-import { sortTodosByDate } from './selectors'
+import { combineReducers } from 'redux'
 import { createReducer } from '../../../utils/index'
 
-const todoReducer = createReducer([])({
-  [ADD]: (state, action) => sortTodosByDate([...state, action.payload]),
-  [UPDATE]: (state, action) => sortTodosByDate([...state.filter(todo => todo.id !== action.payload.id), action.payload]),
-  [REMOVE]: (state, action) => state.filter(todo => todo.id !== action.payload)
+const byId = createReducer({})({
+  [ADD]: (state, { payload }) => ({ ...state, [payload.id]: payload }),
+  [UPDATE]: (state, { payload }) => ({ ...state, [payload.id]: payload }),
+  [REMOVE]: (state, { payload }) => {
+    const { [payload]: todo, ...todos } = state
+    return todos
+  }
 })
 
-export default todoReducer
+const allIds = createReducer([])({
+  [ADD]: (state, { payload }) => [ ...state, payload.id ],
+  [UPDATE]: (state, { payload }) => [ ...state, payload.id ],
+  [REMOVE]: (state, { payload }) => state.filter(id => id !== payload)
+})
+
+export default combineReducers({ byId, allIds })

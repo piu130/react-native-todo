@@ -6,12 +6,12 @@ import { TodoListItem } from '.'
 
 export class TodoList extends Component {
   render () {
-    const { todos } = this.props
+    const { todoIds } = this.props
     return (
       <FlatList
-        data={todos}
-        renderItem={({ item }) => <TodoListItem todo={item} />}
-        keyExtractor={(item) => item.id}
+        data={todoIds}
+        renderItem={({ item }) => <TodoListItem todo={{ id: item }} />}
+        keyExtractor={(item) => item}
       />
     )
   }
@@ -22,7 +22,7 @@ TodoList.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  todos: state.entities.todos
+  todoIds: state.entities.todos.allIds
 })
 
 const mapDispatchToProps = {}

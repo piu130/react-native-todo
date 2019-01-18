@@ -8,8 +8,9 @@ import { StyledText as Text } from '.'
 export class TodoListStatus extends Component {
   render () {
     const { todos } = this.props
-    const total = todos.length
-    const totalToday = todos.reduce(
+    const todosArray = Object.values(todos)
+    const total = todosArray.length
+    const totalToday = todosArray.reduce(
       (acc, todo) => acc + (todo.date && moment({ ...todo.date, ...todo.time }).isSame(moment(), 'day') ? 1 : 0),
       0
     )
@@ -34,11 +35,11 @@ export class TodoListStatus extends Component {
 }
 
 TodoListStatus.propTypes = {
-  todos: PropTypes.array
+  todos: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({
-  todos: state.entities.todos
+  todos: state.entities.todos.byId
 })
 
 const mapDispatchToProps = {}

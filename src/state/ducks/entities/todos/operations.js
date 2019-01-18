@@ -7,7 +7,7 @@ export const putTodo = todo => dispatch => {
 }
 
 export const deleteTodo = id => (dispatch, getState) => {
-  const todo = getState().entities.todos.find(todo => todo.id === id)
+  const todo = getState().entities.todos.byId[id]
   if (todo) dispatch(notificationsOperations.removeNotificationFromTodo(todo))
   dispatch(actions.remove(id))
 }
