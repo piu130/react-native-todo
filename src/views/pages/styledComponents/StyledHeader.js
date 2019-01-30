@@ -17,6 +17,9 @@ export const StyledHeader = ({ colors, containerStyle, statusBarProps, leftCompo
     }}
     leftComponent={{
       color: colors.textColorPrimary,
+      disabledStyle: {
+        backgroundColor: 'transparent'
+      },
       underlayColor: 'transparent',
       ...leftComponent
     }}
@@ -26,6 +29,9 @@ export const StyledHeader = ({ colors, containerStyle, statusBarProps, leftCompo
     }}
     rightComponent={{
       color: colors.textColorPrimary,
+      disabledStyle: {
+        backgroundColor: 'transparent'
+      },
       underlayColor: 'transparent',
       ...rightComponent
     }}
