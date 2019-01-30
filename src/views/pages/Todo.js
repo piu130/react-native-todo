@@ -27,7 +27,6 @@ export class Todo extends Component {
       <View>
         <FormInput
           autoFocus
-          autoGrow
           containerStyle={{ width: '100%' }}
           onSubmitEditing={async () => {
             const date = await this.handleDatePicker(todo.date)
