@@ -16,6 +16,9 @@ export const StyledButton = ({ colors, icon, buttonStyle, disabledStyle, ...rest
       backgroundColor: colors.colorPrimary,
       ...buttonStyle
     }}
+    disabledTitleStyle={{
+      color: colors.textColorPrimary
+    }}
     disabledStyle={{
       backgroundColor: colors.colorPrimaryLight,
       ...disabledStyle
