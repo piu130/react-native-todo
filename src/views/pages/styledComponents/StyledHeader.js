@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Header } from 'react-native-elements'
 
-export const StyledHeader = ({ colors, outerContainerStyles, statusBarProps, leftComponent, centerComponent, rightComponent, ...rest }) => (
+export const StyledHeader = ({ colors, containerStyle, statusBarProps, leftComponent, centerComponent, rightComponent, ...rest }) => (
   <Header
     backgroundColor={colors.colorPrimary}
-    outerContainerStyles={{
+    containerStyle={{
       borderBottomWidth: 0,
-      ...outerContainerStyles
+      ...containerStyle
     }}
     statusBarProps={{
       backgroundColor: colors.navigationBarColor,
@@ -17,7 +17,7 @@ export const StyledHeader = ({ colors, outerContainerStyles, statusBarProps, lef
     }}
     leftComponent={{
       color: colors.textColorPrimary,
-      underlayColor: colors.colorPrimaryLight,
+      underlayColor: 'transparent',
       ...leftComponent
     }}
     centerComponent={{
@@ -26,7 +26,7 @@ export const StyledHeader = ({ colors, outerContainerStyles, statusBarProps, lef
     }}
     rightComponent={{
       color: colors.textColorPrimary,
-      underlayColor: colors.colorPrimaryLight,
+      underlayColor: 'transparent',
       ...rightComponent
     }}
     {...rest}
@@ -35,7 +35,7 @@ export const StyledHeader = ({ colors, outerContainerStyles, statusBarProps, lef
 
 StyledHeader.propTypes = {
   colors: PropTypes.object,
-  outerContainerStyles: PropTypes.object,
+  containerStyle: PropTypes.object,
   statusBarProps: PropTypes.object,
   leftComponent: PropTypes.object,
   centerComponent: PropTypes.object,
