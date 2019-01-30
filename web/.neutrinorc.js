@@ -21,6 +21,8 @@ module.exports = {
           .include
             .add(join(nodeModulesDir, 'react-native-elements'))
             .add(join(nodeModulesDir, 'react-native-vector-icons'))
+            .add(join(nodeModulesDir, 'react-native-ratings'))
+            .add(join(nodeModulesDir, 'react-native-status-bar-height'))
             .add(join(nodeModulesDir, 'react-native-touchable-scale'))
             .end();
     }
