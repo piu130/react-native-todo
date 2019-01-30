@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 export const StyledListItem = ({ colors, titleStyle, containerStyle, ...rest }) => (
   <ListItem
-    hideChevron
     titleStyle={{
       color: colors.textColorSecondary,
       ...titleStyle
